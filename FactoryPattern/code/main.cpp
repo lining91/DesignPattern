@@ -14,7 +14,7 @@ void main()
 	Operation* pOpe = cfactory.CreateOperation(cOpe);
 	if (pOpe == NULL)
 	{
-		cout << "输入的计算符号不正确" << endl;
+		cout << "杈撳叆鐨勮绠楃鍙蜂笉姝ｇ‘" << endl;
 		return;
 	}
 	try{
