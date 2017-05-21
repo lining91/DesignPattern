@@ -20,12 +20,3 @@ Operation* FactoryPattern::CreateOperation(char cOpe)
 		return NULL;
 	}
 }
-
-int FactoryPattern::GetResult(int n1, int n2, char cOpe)
-{
-	Operation* pOpe = CreateOperation(cOpe);
-	if (pOpe == NULL)
-		throw "输入的计算符号不正确";
-
-	return pOpe->GetResult(n1, n2);
-}

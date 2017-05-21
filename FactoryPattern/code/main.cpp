@@ -6,27 +6,27 @@ using namespace std;
 
 void main()
 {
-	FactoryPattern* pFactory = new FactoryPattern();
-	if (pFactory == NULL)
-		return;
-
 	char cOpe = '*';
 	int n1 = 33;
 	int n2 = 52;
 
-	int nResult;
+	FactoryPattern cfactory;
+	Operation* pOpe = cfactory.CreateOperation(cOpe);
+	if (pOpe == NULL)
+	{
+		cout << "输入的计算符号不正确" << endl;
+		return;
+	}
 	try{
-		nResult = pFactory->GetResult(n1, n2, cOpe);
+		int nResult = pOpe->GetResult(n1, n2);
 		cout << n1 << cOpe << n2 << " is " << nResult << endl;
 	}
-	
 	catch(char* pErr)
 	{
 		cout << pErr << endl;
 	}
-	
-	delete pFactory;
-	pFactory == NULL;
+	delete pOpe;
+	pOpe == NULL;
 
 	system("pause");
 }

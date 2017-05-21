@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 
-//	实现计算器的功能
+//  实现计算器的功能
 
-//	操作基类
+//  操作基类
 class Operation{
 public:
 	virtual int GetResult(int n1, int n2) = 0;
@@ -13,7 +13,7 @@ public:
 	int n2;
 };
 
-//	加减乘数类
+//  加减乘数类
 class OperationAdd : public Operation{
 public:
 	virtual int GetResult(int n1, int n2)
@@ -53,5 +53,4 @@ public:
 class FactoryPattern{
 public:
 	Operation* CreateOperation(char cOpe);
-	int GetResult(int n1, int n2, char cOpe);
 };
